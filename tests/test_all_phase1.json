@@ -1,0 +1,74 @@
+{
+  "meta": { "id": "phase1_comprehensive" },
+  "events": [
+    {
+      "type": "shortest_path", "id": 1,
+      "source": 0, "target": 4, "mode": "distance"
+    },
+    {
+      "type": "shortest_path", "id": 2,
+      "source": 0, "target": 4, "mode": "distance",
+      "constraints": { "forbidden_nodes": [1] }
+    },
+    {
+      "type": "shortest_path", "id": 3,
+      "source": 0, "target": 4, "mode": "distance",
+      "constraints": { "forbidden_road_types": ["secondary"] }
+    },
+    {
+      "type": "shortest_path", "id": 4,
+      "source": 0, "target": 4, "mode": "time"
+    },
+    {
+      "type": "knn", "id": 5,
+      "poi": "restaurant",
+      "query_point": { "lat": 19.09, "lon": 72.89 },
+      "k": 2,
+      "metric": "euclidean"
+    },
+    {
+      "type": "knn", "id": 6,
+      "poi": "hospital",
+      "query_point": { "lat": 19.07, "lon": 72.87 },
+      "k": 1,
+      "metric": "shortest_path"
+    },
+    {
+      "type": "remove_edge", "id": 7,
+      "edge_id": 1002
+    },
+    {
+      "type": "shortest_path", "id": 8,
+      "source": 0, "target": 4, "mode": "distance"
+    },
+    {
+      "type": "remove_edge", "id": 9,
+      "edge_id": 1002
+    },
+    {
+      "type": "modify_edge", "id": 10,
+      "edge_id": 1002,
+      "patch": { "length": 50.0 }
+    },
+    {
+      "type": "shortest_path", "id": 11,
+      "source": 0, "target": 4, "mode": "distance"
+    },
+    {
+      "type": "modify_edge", "id": 12,
+      "edge_id": 9999,
+      "patch": {}
+    },
+    {
+      "type": "shortest_path", "id": 13,
+      "source": 0, "target": 0, "mode": "distance"
+    },
+    {
+      "type": "knn", "id": 14,
+      "poi": "atm",
+      "query_point": { "lat": 19.07, "lon": 72.87 },
+      "k": 3,
+      "metric": "euclidean"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+*.exe
+*.o
+*.obj
+output*.json
+out*.json
+*.sublime-project
+*.sublime-workspace

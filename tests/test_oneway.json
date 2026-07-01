@@ -1,0 +1,17 @@
+{
+  "meta": { "id": "oneway_test" },
+  "events": [
+    { "type": "shortest_path", "id": 1, "source": 0, "target": 5, "mode": "distance" },
+    { "type": "shortest_path", "id": 2, "source": 5, "target": 0, "mode": "distance" },
+    { "type": "shortest_path", "id": 3, "source": 2, "target": 5, "mode": "distance" },
+    { "type": "knn", "id": 4, "poi": "restaurant", "query_point": {"lat": 19.070, "lon": 72.870}, "k": 1, "metric": "shortest_path" },
+    { "type": "remove_edge", "id": 5, "edge_id": 4 },
+    { "type": "remove_edge", "id": 6, "edge_id": 5 },
+    { "type": "remove_edge", "id": 7, "edge_id": 6 },
+    { "type": "shortest_path", "id": 8, "source": 0, "target": 5, "mode": "distance" },
+    { "type": "modify_edge", "id": 9, "edge_id": 4, "patch": {} },
+    { "type": "modify_edge", "id": 10, "edge_id": 5, "patch": { "length": 1.0 } },
+    { "type": "modify_edge", "id": 11, "edge_id": 6, "patch": {} },
+    { "type": "shortest_path", "id": 12, "source": 0, "target": 5, "mode": "distance" }
+  ]
+}
